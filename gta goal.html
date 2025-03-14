@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA Themed Sub Goal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+        body {
+            background-color: transparent;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            width: 600px;
+            height: 100px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 5px solid #ffcc00;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+            font-family: 'Arial', sans-serif;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .bar-container {
+            width: 90%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            margin: 10px auto;
+            position: relative;
+        }
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff0000, #ff9900, #ffff00);
+            width: 50%; /* Adjust width dynamically via script */
+            border-radius: 10px;
+            transition: width 0.5s;
+        }
+        .goal-text {
+            font-size: 20px;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </head>
+<body>
+    <div style="text-align: center; position: relative;">
+        <img src="https://cdn.mos.cms.futurecdn.net/BXtrrTrTLBqptap6Ky7GEf-1024-80.jpg" width="600px" alt="GTA Themed Banner">
+        <div class="goal-text">Objetivo: 400 Subs para comprar el PS5 🚘💸</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+    </div>
+
+    <script>
+        function updateProgress(subs) {
+            let goal = 400; // Total subs goal
+            let percentage = (subs / goal) * 100;
+            document.querySelector(".progress-bar").style.width = percentage + "%";
+            document.querySelector(".goal-text").innerText = `Subs: ${subs} / 400`;
+        }
+        // Example: update progress bar dynamically (you need to pass the actual sub count from Twitch)
+        setTimeout(() => updateProgress(150), 2000); // Example: Starts at 150 subs
+    </script>
+</body>
+</html>
